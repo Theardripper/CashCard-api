@@ -1,0 +1,12 @@
+# IDEs (IntelliJ, Android Studio, VS Code)
+.idea/
+*.iml
+.vscode/
+
+# Arquivos de Build do Gradle
+.gradle/
+build/
+
+# Arquivos do Sistema Operacional
+.DS_Store
+Thumbs.db
