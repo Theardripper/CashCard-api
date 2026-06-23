@@ -1,5 +1,4 @@
 # CashCard API
 
-- Java
+- Java 21
 - Spring Boot
-- 
