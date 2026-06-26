@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class CashCardController {
 
     @GetMapping("/{requestId}")
-    private ResponseEntity<String> findById(@PathVariable Long requestId){
+    public ResponseEntity<CashCard> findById(@PathVariable Long requestId){
         if (requestId.equals(99L)){
             CashCard cashCard = new CashCard(99L, 123.45);
             return ResponseEntity.ok(cashCard);
