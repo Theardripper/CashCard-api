@@ -3,10 +3,7 @@ package com.CashCard.controller;
 import com.CashCard.dto.CashCard;
 import com.CashCard.repository.CashCardRepository;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
@@ -27,5 +24,10 @@ public class CashCardController {
         } else {
             return ResponseEntity.notFound().build();
         }
+    }
+
+    @PostMapping
+    private ResponseEntity<Void> createCashCard(){
+        return null;
     }
 }
