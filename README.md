@@ -2,3 +2,4 @@
 
 - Java 21
 - Spring
+- Postegres
