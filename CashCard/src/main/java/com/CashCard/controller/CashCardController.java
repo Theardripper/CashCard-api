@@ -1,10 +1,10 @@
 package com.CashCard.controller;
 
-import com.CashCard.dto.CashCard;
 import com.CashCard.repository.CashCardRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -52,5 +52,13 @@ public class CashCardController {
                 .buildAndExpand(savedCashCard.id())
                 .toUri();
         return ResponseEntity.created(locationOfNewCashCard).build();
+    }
+
+    HttpEntity<CashCard> request = new HttpEntity<>(cashCardUpdate);
+
+    @PutMapping("/{requestedId}")
+    private ResponseEntity<Void> putCashCard(@PathVariable Long requestedId, @RequestBody CashCard cashCardUpdate) {
+        // just return 204 NO CONTENT for now.
+        return ResponseEntity.noContent().build();
     }
 }

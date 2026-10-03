@@ -13,22 +13,41 @@ java {
 	}
 }
 
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
 repositories {
 	mavenCentral()
 }
 
 dependencies {
+	// Web e API REST
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
-	implementation 'org.springframework.data:spring-data-jdbc'
-	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
-	implementation 'org.postgresql:postgresql:42.7.4'
-	testImplementation 'com.h2database:h2:2.3.232'
-	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0'
+	// Persistência de Dados (JPA / Hibernate)
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	runtimeOnly 'org.postgresql:postgresql:42.7.4'
+
+	// Segurança
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 
+	// Documentação da API (Swagger / OpenAPI)
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0'
+
+	// Produtividade (Lombok)
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	// Desenvolvimento
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+	// Testes
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	testImplementation 'com.h2database:h2:2.3.232'
 }
 
 tasks.named('test') {
