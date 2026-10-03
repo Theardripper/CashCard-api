@@ -1,6 +1,5 @@
 package com.CashCard;
 
-import com.CashCard.dto.CashCard;
 import com.jayway.jsonpath.DocumentContext;
 import com.jayway.jsonpath.JsonPath;
 import net.minidev.json.JSONArray;

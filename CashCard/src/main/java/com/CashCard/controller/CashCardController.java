@@ -1,6 +1,5 @@
 package com.CashCard.controller;
 
-import com.CashCard.dto.CashCard;
 import com.CashCard.repository.CashCardRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
