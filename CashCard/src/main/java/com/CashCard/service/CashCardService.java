@@ -2,6 +2,7 @@ package com.CashCard.service;
 
 import com.CashCard.dto.request.CashCardRequestDTO;
 import com.CashCard.dto.response.CashCardResponseDTO;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
