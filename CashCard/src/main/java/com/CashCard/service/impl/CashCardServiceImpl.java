@@ -14,16 +14,17 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.util.List;
+
 @Service
 public class CashCardServiceImpl implements CashCardService {
 
     private final CashCardRepository cashCardRepository;
-    private final CashCardService cashCardService;
+
 
     @Autowired
-    public CashCardServiceImpl(CashCardRepository cashCardRepository, CashCardService cashCardService){
+    public CashCardServiceImpl(CashCardRepository cashCardRepository){
         this.cashCardRepository = cashCardRepository;
-        this.cashCardService = cashCardService;
     }
 
     @Override
@@ -43,7 +44,12 @@ public class CashCardServiceImpl implements CashCardService {
         return toResponseDTO(cashCard);
     }
 
-    @PutMapping("/{id}")
+    public List<CashCardResponseDTO> listAll(Long id){
+        CashCard cashCard = cashCardRepository.findAll(id)
+                .orElseThrow(() -> new Res)
+    }
+
+
     public ResponseEntity<CashCardResponseDTO> updated (@PathVariable Long id, @Valid @RequestBody CashCardRequestDTO dto){
         return ResponseEntity.ok(cashCardService.update(id, dto));
     }
